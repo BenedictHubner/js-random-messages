@@ -5,7 +5,7 @@ const months = ['January', 'March', 'May', 'July', 'August', 'October', 'Decembe
                 'April', 'June', 'September', 'November',
                 'February'];
 
-const causesOfDeath = ['natural causes', 'lightning strike', 'unicorn attack', 'meteor strike', 'lightsaber', 'T-Rex'];
+const causesOfDeath = ['natural causes', 'a lightning strike', 'a unicorn attack', 'a meteor strike', 'a lightsaber', 'a T-Rex'];
 
 /* Random date generation */
 const randYear = () => 2024 + Math.floor(Math.random()*50);
@@ -39,3 +39,30 @@ const getDate = () => {
     return [year, months[month], day];
 }
 
+/* Message maker */
+const dayToString = day => {
+    let str = day.toString();
+    if (day == 1 || day == 21 || day == 31) {
+        str += 'st';
+    } else if (day == 2 || day == 22) {
+        str += 'nd';
+    } else if (day == 3 || day == 23) {
+        str += 'rd';
+    } else {
+        str += 'th';
+    }
+    return str;
+}
+
+const date = getDate();
+const cause = causesOfDeath[Math.floor(Math.random()*causesOfDeath.length)];
+
+date[2] = dayToString(date[2]);
+
+const message = 
+`I know the number of the sand and the measure of the sea.
+I understand the speech of the dumb and hear the voiceless.
+Beware this day: ${date[2]} ${date[1]} ${date[0]}.
+For on that fateful date, you shall face death in the guise of ${cause}.`;
+
+console.log(message);
