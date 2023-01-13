@@ -6,3 +6,5 @@ const months = ['January', 'March', 'May', 'July', 'August', 'October', 'Decembe
                 'April', 'June', 'September', 'November',
                 'February'];
 
+const causesOfDeath = ['natural causes', 'lightning strike', 'unicorn attack', 'meteor strike', 'lightsaber', 'T-Rex'];
+
